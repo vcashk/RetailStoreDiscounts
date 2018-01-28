@@ -7,9 +7,9 @@ import XCTest
 
 class Product {
     var prodName: String
-    var prodPrice: Int
+    var prodPrice: Double
     
-    init(prodName: String, prodPrice: Int){
+    init(prodName: String, prodPrice: Double){
         self.prodName = prodName
         self.prodPrice = prodPrice
     }
@@ -64,21 +64,36 @@ class DiscountRules {
 
 class Employee:Customer {
     var name : String
-    var discount : Float
+    var discount : Double
     var product: Product
 
-    init(name: String, discount: Float, product: Product) {
+    init(name: String, discount: Double, product: Product) {
         
         self.name = name
         self.discount = discount
         self.product = product
     }
     
-    func calculateDiscount() -> Float {
+    func calculateDiscount() -> Double {
+        if (product.prodName == "Grocery"){
+        print("no discount available")
+           self.discount = 0
+            //return self.discount
+        }
+        else{
+          print("Discount Is available")
+            if (self.product.prodPrice >= 100) {
+                self.discount = ((product.prodPrice*self.discount)/100 + product.prodPrice / 100.0*5)
+            }
+        }
+        
+            
+        
         return self.discount
     }
-    
 }
+    
+
 
 class Affliate: Customer {
     var name : String
@@ -146,6 +161,9 @@ class RDTest: XCTestCase {
         let prod1 = Product(prodName: "grocerry", prodPrice: 100)
         let employee1 = Employee(name: "Victor", discount: 30, product: prod1)
         employee1.calculateDiscount()
+        let prod2 = Product(prodName: "computer", prodPrice: 200)
+        let employee2 = Employee(name: "Tom", discount: 30, product: prod2)
+        employee2.calculateDiscount()
         let affliate1 = Affliate(name: "Affliate1", discount: 10.0 , affliateDiscription: "Affliate of group C")
         affliate1.calculateDiscount()
         //let customer1 = Customer(name: "customer1", loyaltyyears: 2, discount: 5.0)

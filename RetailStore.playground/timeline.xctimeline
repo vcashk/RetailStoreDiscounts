@@ -3,7 +3,13 @@
    version = "3.0">
    <TimelineItems>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "file:///Users/vikhanna/retailstore/RetailStore.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=1977&amp;EndingColumnNumber=0&amp;EndingLineNumber=115&amp;StartingColumnNumber=0&amp;StartingLineNumber=115&amp;Timestamp=538830519.97"
+         documentLocation = "file:///Users/vikhanna/retailstore/RetailStore.playground#CharacterRangeLen=0&amp;CharacterRangeLoc=2411&amp;EndingColumnNumber=3&amp;EndingLineNumber=133&amp;StartingColumnNumber=3&amp;StartingLineNumber=133&amp;Timestamp=538832096.382798"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/vikhanna/retailstore/RetailStore.playground#CharacterRangeLen=30&amp;CharacterRangeLoc=1533&amp;EndingColumnNumber=0&amp;EndingLineNumber=84&amp;StartingColumnNumber=11&amp;StartingLineNumber=83&amp;Timestamp=538832096.3829091"
+         lockedSize = "{175, 62}"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
