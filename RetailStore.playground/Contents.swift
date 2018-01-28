@@ -4,15 +4,22 @@ import UIKit
 import XCTest
 
 
+protocol Discount {
+    
+     func calculateDiscount() -> Float
+}
 
 class UserCategory<T> {
     var category: T
     init(category:T) {
         self.category = category
     }
+   
+
+   
 }
 
-struct discountRules {
+class DiscountRules {
     var cost : Int
     var product : String
     var factor : Float
@@ -35,20 +42,28 @@ struct discountRules {
     
     
 }
+
+
     
 
-struct Employee {
+class Employee: Discount {
     var name : String
     var discount : Float
-    
+
     init(name: String, discount: Float) {
+        
         self.name = name
         self.discount = discount
     }
     
+    func calculateDiscount() -> Float {
+        return self.discount
+    }
+    
+    
 }
 
-struct Affliate {
+class Affliate: Discount {
     var name : String
     var discount : Float
     var affliateDiscription : String
@@ -58,25 +73,31 @@ struct Affliate {
         self.discount = discount
         self.affliateDiscription = affliateDiscription
     }
+    
+    func calculateDiscount() -> Float {
+        return self.discount
+    }
 }
 
 
-struct Customer {
+class Customer:Discount {
     var name : String
-//    var discount : Int
+    var discount : Float
     var loyaltyyears : Int
     
-    init(name: String, loyaltyyears: Int) {
+    init(name: String, loyaltyyears: Int, discount: Float) {
         self.name = name
-        //self.discount = discount
+        self.discount = discount
         self.loyaltyyears = loyaltyyears
+    }
+    
+    func calculateDiscount() -> Float {
+        return self.discount
     }
     
     
     
 }
-
-
 
 
 class User {
@@ -88,17 +109,18 @@ class User {
 
 
 
-
-    
     
 class Users {
         var users : Array<Int> = []
     }
     
 let employee1 = Employee(name: "Victor", discount: 30 )
+employee1.calculateDiscount()
 let affliate1 = Affliate(name: "Affliate1", discount: 10.0 , affliateDiscription: "Affliate of group C")
+affliate1.calculateDiscount()
 
 let user1 = User(userCategory: UserCategory(category: employee1))
+let user2 = User(userCategory: UserCategory(category: affliate1))
 
 
 //MARK: Helper Functions
